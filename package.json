@@ -1,29 +1,45 @@
 {
   "name": "blog.rodrigomello.frontend",
-  "private": true,
   "description": "Rodrigo Mello Blog",
   "version": "0.1.0",
   "author": "Rodrigo Mello <rodrigojcmello@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.18.4",
+    "gatsby": "^2.18.7",
     "gatsby-image": "^2.2.34",
-    "gatsby-plugin-manifest": "^2.2.30",
-    "gatsby-plugin-offline": "^3.0.24",
+    "gatsby-plugin-manifest": "^2.2.31",
+    "gatsby-plugin-offline": "^3.0.27",
     "gatsby-plugin-react-helmet": "^3.1.16",
-    "gatsby-plugin-sharp": "^2.3.4",
-    "gatsby-source-filesystem": "^2.1.39",
-    "gatsby-transformer-sharp": "^2.3.6",
+    "gatsby-plugin-sharp": "^2.3.5",
+    "gatsby-plugin-typescript": "^2.1.20",
+    "gatsby-source-filesystem": "^2.1.40",
+    "gatsby-transformer-sharp": "^2.3.7",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "@types/node": "^12.12.14",
+    "@types/react": "^16.9.15",
+    "@types/react-dom": "^16.9.4",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
     "gatsby-source-strapi": "^0.0.10",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.3"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "blog",
+    "strapi"
   ],
   "license": "MIT",
   "scripts": {
