@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
+const x = 10;
+// eslint-disable-next-line no-console
+console.log(x);
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function IndexPage({ data }: any) {
+function IndexPage({ data }: any): ReactElement {
   // eslint-disable-next-line no-console
   console.log({ data });
   return (
