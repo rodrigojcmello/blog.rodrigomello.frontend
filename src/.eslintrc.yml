@@ -17,6 +17,7 @@ plugins:
   - react
   - '@typescript-eslint'
   - prettier
+  - only-error
 
 parserOptions:
   ecmaVersion: 2018
