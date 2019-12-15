@@ -26,6 +26,11 @@ parserOptions:
 
 rules:
   max-lines: 1
+  import/extensions:
+    - 1
+    - extensions:
+        - '.ts'
+        - '.tsx'
   react/jsx-filename-extension:
     - 1
     - extensions:
@@ -37,6 +42,5 @@ settings:
   import/resolver:
       node:
         extensions:
-          - '.js'
           - '.ts'
           - '.tsx'
