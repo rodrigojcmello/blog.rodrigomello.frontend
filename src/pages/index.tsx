@@ -9,7 +9,7 @@ function IndexPage({ data }: any): ReactElement {
   console.log({ data });
   return (
     <Layout>
-      <SEO title="Home" lang="en" />
+      <SEO title="Home" />
       <h1>Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>

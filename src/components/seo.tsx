@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 interface Props {
   description?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  lang: any;
+  lang?: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   meta?: any;
   title: string;
