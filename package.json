@@ -27,6 +27,7 @@
     "@typescript-eslint/parser": "^2.10.0",
     "eslint": "^6.7.2",
     "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -53,12 +54,12 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "lint": "eslint --ext .ts,tsx src"
+    "lint": "eslint --ext .js,.ts,tsx . --fix"
   },
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint",
-      "pre-push": "npm lint"
+      "pre-push": "yarn lint"
     }
   },
   "repository": {

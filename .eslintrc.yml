@@ -1,0 +1,13 @@
+env:
+  node: true
+
+extends:
+  - airbnb-base
+  - plugin:prettier/recommended
+
+plugins:
+  - prettier
+  - only-error
+
+rules:
+  max-lines: 1
