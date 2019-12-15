@@ -75,7 +75,7 @@ function SEO({ description, lang, meta, title }: Props): JSX.Element {
           name: `twitter:description`,
           content: metaDescription
         }
-      ].concat(meta)}
+      ].concat(meta || [])}
     />
   );
 }
