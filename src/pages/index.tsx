@@ -3,21 +3,19 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { bgBlack, colorRed } from '../assets/styles/base.module.scss';
+import { Props } from './types';
+import Lulu from './lulu.jpeg';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function IndexPage({ data }: any): ReactElement {
-  // eslint-disable-next-line no-console
-  console.log({ data });
+function IndexPage({ data }: Props): ReactElement {
   return (
     <Layout>
       <SEO title="Home" />
       <h1 className={`${bgBlack} ${colorRed}`}>DEPLOY TEST</h1>
-      <p>Welcome to your new Gatsby site.</p>
+      <p>123 Nova home</p>
       <p>Now go build something great.</p>
       <ul>
         {data.allStrapiArticle.edges.map(
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (document: any): JSX.Element => (
+          (document): JSX.Element => (
             <li key={document.node.id}>
               <h2>
                 <Link to={`/${document.node.id}`}>{document.node.title}</Link>
@@ -26,7 +24,8 @@ function IndexPage({ data }: any): ReactElement {
           )
         )}
       </ul>
-      <Link to="/page-2/">Go to page DOIS</Link>
+      <img alt="lulu" src={Lulu} />
+      <Link to="/page-2/">Go to page two</Link>
     </Layout>
   );
 }
