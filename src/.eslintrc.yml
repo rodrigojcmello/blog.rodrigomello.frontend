@@ -45,3 +45,6 @@ settings:
         extensions:
           - '.ts'
           - '.tsx'
+
+ignorePatterns:
+  - '@types/graphql.ts'
