@@ -1,11 +1,15 @@
 import React, { ReactElement } from 'react';
 import { graphql, Link } from 'gatsby';
 import Img, { FixedObject } from 'gatsby-image';
+import ReactMarkdown from 'react-markdown';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { bgBlack, colorRed } from '../assets/styles/base.module.scss';
-import { Props } from './types';
-// import Lulu from './lulu.jpeg';
+import { Query } from '../../graphql-types';
+
+export interface Props {
+  data: Query;
+}
 
 function IndexPage({ data }: Props): ReactElement {
   return (
@@ -20,18 +24,17 @@ function IndexPage({ data }: Props): ReactElement {
             <li key={document.node.id}>
               <h2>
                 <Link to={`/${document.node.id}`}>{document.node.title}</Link>
-                <Img
-                  fixed={
-                    document.node.image?.childImageSharp?.fixed as FixedObject
-                  }
-                />
-                <p>{document.node.content}</p>
+                {/* <Img */}
+                {/*  fixed={ */}
+                {/*    document.node.image?.childImageSharp?.fixed as FixedObject */}
+                {/*  } */}
+                {/* /> */}
+                <ReactMarkdown source={document.node.content as string} />
               </h2>
             </li>
           )
         )}
       </ul>
-      {/* <img alt="lulu" src={Lulu} /> */}
       <Link to="/page-2/">Go to page two</Link>
     </Layout>
   );

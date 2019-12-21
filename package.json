@@ -15,9 +15,12 @@
     "gatsby-transformer-sharp": "^2.3.9",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-markdown": "^4.2.2"
   },
   "devDependencies": {
+    "@mdx-js/mdx": "^1.5.3",
+    "@mdx-js/react": "^1.5.3",
     "@types/node": "^12.12.14",
     "@types/react": "^16.9.15",
     "@types/react-dom": "^16.9.4",
@@ -35,10 +38,11 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "gatsby-plugin-graphql-codegen": "^2.0.1",
-    "gatsby-plugin-sass": "^2.1.26",
+    "gatsby-plugin-mdx": "^1.0.64",
     "gatsby-plugin-scss-typescript": "^4.0.8",
-    "gatsby-remark-images-contentful": "^2.1.27",
+    "gatsby-remark-images": "^3.1.39",
     "gatsby-source-strapi": "^0.0.10",
+    "gatsby-transformer-remark": "^2.6.45",
     "gatsby-transformer-sqip": "^2.1.54",
     "husky": "^3.1.0",
     "node-sass": "^4.13.0",
@@ -59,7 +63,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "lint": "eslint --ext .js,.ts,tsx . --fix"
+    "lint": "eslint --ext .js,.ts,tsx . --fix",
+    "publish": "now --prod"
   },
   "husky": {
     "hooks": {
