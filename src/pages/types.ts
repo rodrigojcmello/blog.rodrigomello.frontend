@@ -1,5 +1,5 @@
-import { IndexQueryQuery } from '../@types/graphql';
+import { Query } from '../../graphql-types';
 
 export interface Props {
-  data: IndexQueryQuery;
+  data: Query;
 }

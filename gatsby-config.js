@@ -3,15 +3,9 @@ module.exports = {
     title: 'Rodrigo Mello',
     description:
       'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
-    author: '@gatsbyjs and @rodrigomello'
+    author: 'Rodrigo José Carvalho de Mello'
   },
   plugins: [
-    // {
-    //   resolve: 'gatsby-plugin-generate-typings',
-    //   options: {
-    //     dest: `${__dirname}/src/@types/graphql.ts`
-    //   }
-    // },
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
     {
@@ -25,12 +19,20 @@ module.exports = {
       resolve: 'gatsby-source-strapi',
       options: {
         apiURL: 'http://157.245.168.132:1337',
-        contentTypes: ['article', 'user'],
+        contentTypes: ['article'],
         queryLimit: 1000
       }
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-graphql-codegen',
+      options: {
+        fileName: 'graphql-types.ts',
+        codegen: true,
+        codegenDelay: 250
+      }
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

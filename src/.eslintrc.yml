@@ -47,4 +47,4 @@ settings:
           - '.tsx'
 
 ignorePatterns:
-  - '@types/graphql.ts'
+  - '@types/graphql-types.ts'
