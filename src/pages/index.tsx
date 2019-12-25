@@ -1,7 +1,10 @@
 import React, { ReactElement } from 'react';
 import { graphql, Link } from 'gatsby';
-import Img, { FixedObject } from 'gatsby-image';
-import ReactMarkdown from 'react-markdown';
+// import Img, { FixedObject } from 'gatsby-image';
+// import ReactMarkdown from 'react-markdown';
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
+import _ from 'lodash';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { bgBlack, colorRed } from '../assets/styles/base.module.scss';
@@ -11,7 +14,23 @@ export interface Props {
   data: Query;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const buildSlug = (node: any): string => {
+  let slug = `/${_.kebabCase(node.title)}`;
+  if (node.categories) {
+    slug += `/${node.categories
+      .split(',')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .map((n: any) => _.trim(n))
+      .join('/')}`;
+  }
+  return slug;
+};
+
 function IndexPage({ data }: Props): ReactElement {
+  // eslint-disable-next-line no-console
+  console.log({ data });
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -23,13 +42,16 @@ function IndexPage({ data }: Props): ReactElement {
           (document): JSX.Element => (
             <li key={document.node.id}>
               <h2>
-                <Link to={`/${document.node.id}`}>{document.node.title}</Link>
+                <Link to={`${buildSlug(document.node)}`}>
+                  {document.node.title}
+                </Link>
+                {/* <Link to={`/${document.node.id}`}>{document.node.title}</Link> */}
                 {/* <Img */}
                 {/*  fixed={ */}
                 {/*    document.node.image?.childImageSharp?.fixed as FixedObject */}
                 {/*  } */}
                 {/* /> */}
-                <ReactMarkdown source={document.node.content as string} />
+                {/* <ReactMarkdown source={document.node.content as string} /> */}
               </h2>
             </li>
           )
@@ -49,12 +71,11 @@ export const pageQuery = graphql`
         node {
           id
           title
-          content
           published
           content
           image {
             childImageSharp {
-              fixed(width: 150, height: 150) {
+              fixed(width: 100, height: 100) {
                 ...GatsbyImageSharpFixed
               }
             }

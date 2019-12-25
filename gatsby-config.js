@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: 'Rodrigo Mello',
@@ -16,29 +18,32 @@ module.exports = {
         queryLimit: 1000
       }
     },
-    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    // {
-    //   resolve: 'gatsby-transformer-remark',
-    //   options: {
-    //     plugins: [
-    //       {
-    //         resolve: 'gatsby-remark-images',
-    //         options: {
-    //           maxWidth: 800
-    //         }
-    //       }
-    //     ]
-    //   }
-    // },
+    'gatsby-transformer-sharp',
+    'gatsby-transformer-remark',
+    // 'gatsby-transformer-remote-image',
+    'gatsby-remark-images',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
+        defaultLayouts: {
+          default: require.resolve('./src/templates/article.tsx')
+        },
         gatsbyRemarkPlugins: [
+          // 'gatsby-remark-images-anywhere',
+          'gatsby-remark-responsive-image',
+          // {
+          //   resolve: 'gatsby-remark-images',
+          //   options: {
+          //     maxWidth: 1035,
+          //     sizeByPixelDensity: true
+          //   }
+          // },
+          // 'gatsby-remark-code-buttons',
           {
-            resolve: 'gatsby-remark-images',
+            resolve: 'gatsby-remark-vscode',
             options: {
-              maxWidth: 1200
+              colorTheme: 'Light+ (default light)' // Read on for list of included themes. Also accepts object and function forms.
             }
           }
         ]
@@ -47,24 +52,10 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'pages',
         path: `${__dirname}/src/pages`
       }
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: `${__dirname}/src/images`
-      }
-    },
-    // {
-    //   resolve: `gatsby-source-contentful`,
-    //   options: {
-    //     spaceId: `your_space_id`,
-    //     // Learn about environment variables: https://gatsby.dev/env-vars
-    //     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-    //   }
-    // },
     {
       resolve: 'gatsby-plugin-graphql-codegen',
       options: {

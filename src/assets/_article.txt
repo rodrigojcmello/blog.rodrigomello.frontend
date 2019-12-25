@@ -1,0 +1,70 @@
+import React from 'react';
+import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import Layout from '../components/layout';
+import { Query } from '../../graphql-types';
+
+interface Props {
+  data: Query;
+}
+
+function ArticleTemplate({ data }: Props): JSX.Element {
+  // useEffect(() => {
+  //   (async (): Promise<void> => {
+  //     try {
+  //       await deckdeckgoHighlightCodeLoader.defineCustomElements(window);
+  //     } catch (err) {
+  //       // eslint-disable-next-line no-console
+  //       console.error(err);
+  //     }
+  //   })();
+  // }, []);
+
+  // eslint-disable-next-line no-console
+  console.log({ data });
+
+  return (
+    <Layout>
+      <h1>{data.strapiArticle?.title}</h1>
+      {/* {data.strapiArticle?.image?.childImageSharp?.fluid && ( */}
+      {/*  <Img */}
+      {/*    fluid={data.strapiArticle.image.childImageSharp.fluid as FluidObject} */}
+      {/*  /> */}
+      {/* )} */}
+      {/* <ReactMarkdown source={data.strapiArticle?.content as string} /> */}
+      {/* <MDXProvider> */}
+      <>
+        {/* <ReactMarkdown source={data.strapiArticle?.content as string} /> */}
+        <MDXRenderer>
+          <>{data.strapiArticle?.content as string}</>
+        </MDXRenderer>
+      </>
+      {/* </MDXProvider> */}
+    </Layout>
+  );
+}
+
+export default ArticleTemplate;
+
+export const query = graphql`
+  query ArticleTemplate($id: String!) {
+    strapiArticle(id: { eq: $id }) {
+      title
+      content
+      image {
+        childImageSharp {
+          fluid(maxWidth: 960) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+    allMarkdownRemark {
+      edges {
+        node {
+          excerpt(format: MARKDOWN)
+        }
+      }
+    }
+  }
+`;
