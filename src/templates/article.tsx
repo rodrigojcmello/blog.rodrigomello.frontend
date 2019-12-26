@@ -1,10 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
-// import { MDXProvider } from '@mdx-js/react';
-// import { MDXRenderer } from 'gatsby-plugin-mdx';
-// import ReactMarkdown from 'react-markdown';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import Prism from 'prismjs';
 import Layout from '../components/layout';
 import { Query } from '../../graphql-types';
 
@@ -56,6 +52,12 @@ export const query = graphql`
     strapiArticle(id: { eq: $id }) {
       title
       content
+    }
+    article(parent: { parent: { id: { eq: $id } } }) {
+      title
+      childMarkdownRemark {
+        html
+      }
     }
     markdownRemark(parent: { parent: { id: { eq: $id } } }) {
       htmlAst

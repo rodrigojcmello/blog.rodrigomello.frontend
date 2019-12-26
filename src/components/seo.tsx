@@ -41,7 +41,7 @@ function SEO({ description, lang, meta, title }: Props): JSX.Element {
         lang
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s - ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,

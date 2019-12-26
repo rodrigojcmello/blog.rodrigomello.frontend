@@ -1,60 +1,59 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import { graphql, Link } from 'gatsby';
-// import Img, { FixedObject } from 'gatsby-image';
-// import ReactMarkdown from 'react-markdown';
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
-import _ from 'lodash';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { bgBlack, colorRed } from '../assets/styles/base.module.scss';
+import { bgPrimary1 } from '../assets/style/base.module.scss';
 import { Query } from '../../graphql-types';
+import { cn } from '../utils/style';
+import H2 from '../components/Typografy/H2';
 
 export interface Props {
   data: Query;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const buildSlug = (node: any): string => {
-  let slug = `/${_.kebabCase(node.title)}`;
-  if (node.categories) {
-    slug += `/${node.categories
-      .split(',')
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      .map((n: any) => _.trim(n))
-      .join('/')}`;
-  }
-  return slug;
+const buildSlug = (title: string): string => {
+  return title.toLowerCase().replace(/ /g, '-');
 };
 
 function IndexPage({ data }: Props): ReactElement {
-  // eslint-disable-next-line no-console
-  console.log({ data });
-
   return (
     <Layout>
-      <SEO title="Home" />
-      <h1 className={`${bgBlack} ${colorRed}`}>DEPLOY TEST</h1>
-      <p>123 Nova home</p>
-      <p>Now go build something great.</p>
+      <SEO title="Blog" />
+      <h1 className={`${bgPrimary1}`}>Articles</h1>
       <ul>
         {data.allStrapiArticle.edges.map(
-          (document): JSX.Element => (
-            <li key={document.node.id}>
-              <h2>
-                <Link to={`${buildSlug(document.node)}`}>
-                  {document.node.title}
-                </Link>
-                {/* <Link to={`/${document.node.id}`}>{document.node.title}</Link> */}
-                {/* <Img */}
-                {/*  fixed={ */}
-                {/*    document.node.image?.childImageSharp?.fixed as FixedObject */}
-                {/*  } */}
-                {/* /> */}
-                {/* <ReactMarkdown source={document.node.content as string} /> */}
-              </h2>
-            </li>
-          )
+          (document): ReactNode => {
+            if (document.node.title) {
+              return (
+                <li key={document.node.id}>
+                  <H2>
+                    <Link to={`${buildSlug(document.node.title)}`}>
+                      {document.node.title}
+                    </Link>
+                  </H2>
+                  {(document.node.tags || []).map(
+                    (tag): ReactNode => {
+                      if (tag?.id && tag.name) {
+                        return (
+                          <span
+                            key={tag.id}
+                            className={cn(
+                              ['fs1', 'mr2', 'colorContrast8'],
+                              'tags'
+                            )}
+                          >
+                            {tag.name}
+                          </span>
+                        );
+                      }
+                      return undefined;
+                    }
+                  )}
+                </li>
+              );
+            }
+            return undefined;
+          }
         )}
       </ul>
       <Link to="/page-2/">Go to page two</Link>
@@ -65,20 +64,15 @@ function IndexPage({ data }: Props): ReactElement {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query {
     allStrapiArticle(filter: { published: { eq: true } }) {
       edges {
         node {
           id
           title
-          published
-          content
-          image {
-            childImageSharp {
-              fixed(width: 100, height: 100) {
-                ...GatsbyImageSharpFixed
-              }
-            }
+          tags {
+            id
+            name
           }
         }
       }

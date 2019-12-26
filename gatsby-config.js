@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = {
   siteMetadata: {
     title: 'Rodrigo Mello',
@@ -24,6 +22,13 @@ module.exports = {
     // 'gatsby-transformer-remote-image',
     'gatsby-remark-images',
     {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: 'myNodes',
+        imagePath: 'path.to.image'
+      }
+    },
+    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: {
@@ -31,14 +36,14 @@ module.exports = {
         },
         gatsbyRemarkPlugins: [
           // 'gatsby-remark-images-anywhere',
-          'gatsby-remark-responsive-image',
-          // {
-          //   resolve: 'gatsby-remark-images',
-          //   options: {
-          //     maxWidth: 1035,
-          //     sizeByPixelDensity: true
-          //   }
-          // },
+          // 'gatsby-remark-responsive-image',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1035,
+              sizeByPixelDensity: true
+            }
+          },
           // 'gatsby-remark-code-buttons',
           {
             resolve: 'gatsby-remark-vscode',
