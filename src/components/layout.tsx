@@ -1,43 +1,23 @@
-import React, { ReactNode } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import { MDXProvider } from '@mdx-js/react';
-// import { MDXRenderer } from 'gatsby-plugin-mdx';
-import Header from './header';
+import React, { ReactElement, ReactNode } from 'react';
 
 interface Props {
-  children?: ReactNode;
+  children: ReactNode;
 }
 
-function Layout({ children }: Props): JSX.Element {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
+function Layout({ children }: Props): ReactElement {
   return (
-    <MDXProvider>
-      <Header siteTitle={data.site.siteMetadata.title} />
+    <div>
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0
+          maxWidth: 1024,
+          padding: `0px 1.0875rem 1.45rem`
         }}
       >
-        <p>rodrigo 123</p>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          <a href="https://www.gatsbyjs.org">Rodrigo Mello</a>
-        </footer>
+        <footer>bem-vindo dev</footer>
       </div>
-    </MDXProvider>
+    </div>
   );
 }
 

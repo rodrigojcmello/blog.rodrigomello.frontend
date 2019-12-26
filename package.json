@@ -5,24 +5,14 @@
   "author": "Rodrigo Mello <rodrigojcmello@gmail.com>",
   "dependencies": {
     "@mdx-js/react": "^1.5.3",
-    "clipboard": "^2.0.4",
     "gatsby": "^2.18.17",
     "gatsby-image": "^2.2.37",
-    "gatsby-plugin-remote-images": "^2.0.0",
-    "gatsby-remark-code-buttons": "^2.0.4",
-    "gatsby-remark-embed-snippet": "^4.1.18",
     "gatsby-remark-images": "^3.1.39",
-    "gatsby-remark-images-anywhere": "^1.2.1",
-    "gatsby-remark-prismjs": "^3.3.28",
-    "gatsby-remark-responsive-image": "^1.0.0-alpha13-alpha.435e0178",
     "gatsby-remark-vscode": "^1.4.0",
-    "gatsby-transformer-remote-image": "^2.0.2",
     "lodash": "^4.17.15",
-    "prismjs": "^1.17.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1",
-    "react-markdown": "^4.2.2"
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "@mdx-js/loader": "^1.5.3",
@@ -47,7 +37,6 @@
     "gatsby-plugin-graphql-codegen": "^2.0.1",
     "gatsby-plugin-manifest": "^2.2.34",
     "gatsby-plugin-mdx": "^1.0.64",
-    "gatsby-plugin-offline": "^3.0.30",
     "gatsby-plugin-react-helmet": "^3.1.18",
     "gatsby-plugin-scss-typescript": "^4.0.8",
     "gatsby-plugin-sharp": "^2.3.10",
@@ -57,7 +46,6 @@
     "gatsby-transformer-remark": "^2.6.45",
     "gatsby-transformer-sharp": "^2.3.9",
     "husky": "^3.1.0",
-    "loader-utils": "^1.2.3",
     "node-sass": "^4.13.0",
     "prettier": "^1.19.1",
     "typescript": "^3.7.4"

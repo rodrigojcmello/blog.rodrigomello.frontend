@@ -12,7 +12,7 @@ export interface Props {
 }
 
 const buildSlug = (title: string): string => {
-  return title.toLowerCase().replace(/ /g, '-');
+  return `/${title.toLowerCase().replace(/ /g, '-')}`;
 };
 
 function IndexPage({ data }: Props): ReactElement {

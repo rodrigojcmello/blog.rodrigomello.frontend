@@ -2605,8 +2605,6 @@ export type QuerySiteArgs = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
   port?: Maybe<IntQueryOperatorInput>,
   host?: Maybe<StringQueryOperatorInput>,
-  polyfill?: Maybe<BooleanQueryOperatorInput>,
-  pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>
 };
 
@@ -2676,8 +2674,6 @@ export type Site = Node & {
   siteMetadata?: Maybe<SiteSiteMetadata>,
   port?: Maybe<Scalars['Int']>,
   host?: Maybe<Scalars['String']>,
-  polyfill?: Maybe<Scalars['Boolean']>,
-  pathPrefix?: Maybe<Scalars['String']>,
   buildTime?: Maybe<Scalars['Date']>,
 };
 
@@ -2808,8 +2804,6 @@ export type SiteFieldsEnum =
   'siteMetadata___author' |
   'port' |
   'host' |
-  'polyfill' |
-  'pathPrefix' |
   'buildTime';
 
 export type SiteFilterInput = {
@@ -2820,8 +2814,6 @@ export type SiteFilterInput = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
   port?: Maybe<IntQueryOperatorInput>,
   host?: Maybe<StringQueryOperatorInput>,
-  polyfill?: Maybe<BooleanQueryOperatorInput>,
-  pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>,
 };
 
@@ -3022,8 +3014,6 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___apiURL' |
   'pluginCreator___pluginOptions___contentTypes' |
   'pluginCreator___pluginOptions___queryLimit' |
-  'pluginCreator___pluginOptions___nodeType' |
-  'pluginCreator___pluginOptions___imagePath' |
   'pluginCreator___pluginOptions___defaultLayouts___default' |
   'pluginCreator___pluginOptions___gatsbyRemarkPlugins' |
   'pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve' |
@@ -3227,24 +3217,9 @@ export type SitePluginFieldsEnum =
   'pluginOptions___apiURL' |
   'pluginOptions___contentTypes' |
   'pluginOptions___queryLimit' |
-  'pluginOptions___nodeType' |
-  'pluginOptions___imagePath' |
   'pluginOptions___defaultLayouts___default' |
   'pluginOptions___gatsbyRemarkPlugins' |
   'pluginOptions___gatsbyRemarkPlugins___resolve' |
-  'pluginOptions___gatsbyRemarkPlugins___options___maxWidth' |
-  'pluginOptions___gatsbyRemarkPlugins___options___sizeByPixelDensity' |
-  'pluginOptions___gatsbyRemarkPlugins___options___pathPrefix' |
-  'pluginOptions___gatsbyRemarkPlugins___options___wrapperStyle' |
-  'pluginOptions___gatsbyRemarkPlugins___options___backgroundColor' |
-  'pluginOptions___gatsbyRemarkPlugins___options___linkImagesToOriginal' |
-  'pluginOptions___gatsbyRemarkPlugins___options___showCaptions' |
-  'pluginOptions___gatsbyRemarkPlugins___options___markdownCaptions' |
-  'pluginOptions___gatsbyRemarkPlugins___options___withWebp' |
-  'pluginOptions___gatsbyRemarkPlugins___options___tracedSVG' |
-  'pluginOptions___gatsbyRemarkPlugins___options___loading' |
-  'pluginOptions___gatsbyRemarkPlugins___options___disableBgImageOnAlpha' |
-  'pluginOptions___gatsbyRemarkPlugins___options___disableBgImage' |
   'pluginOptions___gatsbyRemarkPlugins___options___colorTheme' |
   'pluginOptions___name' |
   'pluginOptions___path' |
@@ -3373,8 +3348,6 @@ export type SitePluginPluginOptions = {
   apiURL?: Maybe<Scalars['String']>,
   contentTypes?: Maybe<Array<Maybe<Scalars['String']>>>,
   queryLimit?: Maybe<Scalars['Int']>,
-  nodeType?: Maybe<Scalars['String']>,
-  imagePath?: Maybe<Scalars['String']>,
   defaultLayouts?: Maybe<SitePluginPluginOptionsDefaultLayouts>,
   gatsbyRemarkPlugins?: Maybe<Array<Maybe<SitePluginPluginOptionsGatsbyRemarkPlugins>>>,
   name?: Maybe<Scalars['String']>,
@@ -3403,8 +3376,6 @@ export type SitePluginPluginOptionsFilterInput = {
   apiURL?: Maybe<StringQueryOperatorInput>,
   contentTypes?: Maybe<StringQueryOperatorInput>,
   queryLimit?: Maybe<IntQueryOperatorInput>,
-  nodeType?: Maybe<StringQueryOperatorInput>,
-  imagePath?: Maybe<StringQueryOperatorInput>,
   defaultLayouts?: Maybe<SitePluginPluginOptionsDefaultLayoutsFilterInput>,
   gatsbyRemarkPlugins?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput>,
   name?: Maybe<StringQueryOperatorInput>,
@@ -3436,36 +3407,10 @@ export type SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput = {
 };
 
 export type SitePluginPluginOptionsGatsbyRemarkPluginsOptions = {
-  maxWidth?: Maybe<Scalars['Int']>,
-  sizeByPixelDensity?: Maybe<Scalars['Boolean']>,
-  pathPrefix?: Maybe<Scalars['String']>,
-  wrapperStyle?: Maybe<Scalars['String']>,
-  backgroundColor?: Maybe<Scalars['String']>,
-  linkImagesToOriginal?: Maybe<Scalars['Boolean']>,
-  showCaptions?: Maybe<Scalars['Boolean']>,
-  markdownCaptions?: Maybe<Scalars['Boolean']>,
-  withWebp?: Maybe<Scalars['Boolean']>,
-  tracedSVG?: Maybe<Scalars['Boolean']>,
-  loading?: Maybe<Scalars['String']>,
-  disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>,
-  disableBgImage?: Maybe<Scalars['Boolean']>,
   colorTheme?: Maybe<Scalars['String']>,
 };
 
 export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsFilterInput = {
-  maxWidth?: Maybe<IntQueryOperatorInput>,
-  sizeByPixelDensity?: Maybe<BooleanQueryOperatorInput>,
-  pathPrefix?: Maybe<StringQueryOperatorInput>,
-  wrapperStyle?: Maybe<StringQueryOperatorInput>,
-  backgroundColor?: Maybe<StringQueryOperatorInput>,
-  linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>,
-  showCaptions?: Maybe<BooleanQueryOperatorInput>,
-  markdownCaptions?: Maybe<BooleanQueryOperatorInput>,
-  withWebp?: Maybe<BooleanQueryOperatorInput>,
-  tracedSVG?: Maybe<BooleanQueryOperatorInput>,
-  loading?: Maybe<StringQueryOperatorInput>,
-  disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>,
-  disableBgImage?: Maybe<BooleanQueryOperatorInput>,
   colorTheme?: Maybe<StringQueryOperatorInput>,
 };
 

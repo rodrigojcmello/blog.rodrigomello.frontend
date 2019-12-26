@@ -19,15 +19,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
-    // 'gatsby-transformer-remote-image',
     'gatsby-remark-images',
-    {
-      resolve: `gatsby-plugin-remote-images`,
-      options: {
-        nodeType: 'myNodes',
-        imagePath: 'path.to.image'
-      }
-    },
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
@@ -35,20 +27,10 @@ module.exports = {
           default: require.resolve('./src/templates/article.tsx')
         },
         gatsbyRemarkPlugins: [
-          // 'gatsby-remark-images-anywhere',
-          // 'gatsby-remark-responsive-image',
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 1035,
-              sizeByPixelDensity: true
-            }
-          },
-          // 'gatsby-remark-code-buttons',
           {
             resolve: 'gatsby-remark-vscode',
             options: {
-              colorTheme: 'Light+ (default light)' // Read on for list of included themes. Also accepts object and function forms.
+              colorTheme: 'Light+ (default light)'
             }
           }
         ]
