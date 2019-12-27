@@ -9,9 +9,6 @@ interface Props {
 }
 
 function ArticleTemplate({ data }: Props): JSX.Element {
-  // eslint-disable-next-line no-console
-  console.log({ data });
-
   return (
     <Layout>
       <h1>{data.strapiArticle?.title}</h1>

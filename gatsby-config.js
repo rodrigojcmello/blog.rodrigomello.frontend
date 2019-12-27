@@ -63,6 +63,17 @@ module.exports = {
         icon: 'src/images/gatsby-icon.png'
       }
     },
-    'gatsby-plugin-scss-typescript'
+    {
+      resolve: 'gatsby-plugin-scss-typescript',
+      options: {
+        cssLoaderOptions: {
+          importLoaders: 1,
+          localIdentName:
+            process.env.NODE_ENV === 'production'
+              ? '[hash:base64:5]'
+              : '[local]_[hash:base64:5]'
+        }
+      }
+    }
   ]
 };
