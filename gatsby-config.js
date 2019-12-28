@@ -57,8 +57,8 @@ module.exports = {
         name: 'gatsby-starter-default',
         short_name: 'starter',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#264199',
+        theme_color: '#2e993c',
         display: 'minimal-ui',
         icon: 'src/images/gatsby-icon.png'
       }
@@ -71,7 +71,7 @@ module.exports = {
           localIdentName:
             process.env.NODE_ENV === 'production'
               ? '[hash:base64:5]'
-              : '[local]_[hash:base64:5]'
+              : '[local]'
         }
       }
     }

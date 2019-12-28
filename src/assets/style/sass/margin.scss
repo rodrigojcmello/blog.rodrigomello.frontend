@@ -1,21 +1,46 @@
 @for $i from 0 through 10 {
+  // margin
+
   .m#{$i} {
     margin: var(--s-#{$i});
   }
+  .mAuto#{$i} {
+    margin: auto;
+  }
+
+  // margin-top
 
   .mt#{$i} {
     margin-top: var(--s-#{$i});
   }
+  .mtAuto#{$i} {
+    margin-top: auto;
+  }
+
+  // margin-bottom
 
   .mb#{$i} {
     margin-bottom: var(--s-#{$i});
   }
+  .mbAuto#{$i} {
+    margin-bottom: auto;
+  }
+
+  // margin-right
 
   .mr#{$i} {
     margin-right: var(--s-#{$i});
   }
+  .mrAuto#{$i} {
+    margin-right: auto;
+  }
+
+  // margin-left
 
   .ml#{$i} {
     margin-left: var(--s-#{$i});
+  }
+  .mlAuto#{$i} {
+    margin-left: auto;
   }
 }

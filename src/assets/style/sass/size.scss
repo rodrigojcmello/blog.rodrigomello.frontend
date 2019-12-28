@@ -5,3 +5,17 @@
 .height24px {
   height: 24px;
 }
+
+.height100vh {
+  height: 100vh;
+}
+
+.width100vw {
+  width: 100vw;
+}
+
+@for $i from 1 through 4 {
+  .bp#{$i} {
+    max-width: var(--bp-#{$i});
+  }
+}

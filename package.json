@@ -16,14 +16,20 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.7.7",
     "@mdx-js/loader": "^1.5.3",
     "@mdx-js/mdx": "^1.5.3",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@types/jest": "^24.0.25",
     "@types/node": "^13.1.0",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
     "@types/react-helmet": "^5.0.14",
     "@typescript-eslint/eslint-plugin": "^2.13.0",
     "@typescript-eslint/parser": "^2.13.0",
+    "babel-jest": "^24.9.0",
+    "babel-preset-gatsby": "^0.2.26",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -46,8 +52,12 @@
     "gatsby-transformer-remark": "^2.6.45",
     "gatsby-transformer-sharp": "^2.3.9",
     "husky": "^3.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
     "node-sass": "^4.13.0",
     "prettier": "^1.19.1",
+    "react-test-renderer": "^16.12.0",
+    "ts-jest": "^24.2.0",
     "typescript": "^3.7.4"
   },
   "keywords": [
@@ -63,9 +73,10 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "lint": "eslint --ext .js,.ts,tsx . --fix",
-    "publish": "now --prod"
+    "publish": "now --prod",
+    "test": "jest",
+    "test:all": "jest --watch --coverage"
   },
   "husky": {
     "hooks": {

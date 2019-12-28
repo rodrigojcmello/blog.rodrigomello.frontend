@@ -1,5 +1,5 @@
 import React, { ReactElement, ReactNode } from 'react';
-import { container } from './style.module.scss';
+import { cn } from '../../utils/style';
 
 interface Props {
   children: ReactNode;
@@ -7,8 +7,8 @@ interface Props {
 
 function Layout({ children }: Props): ReactElement {
   return (
-    <div>
-      <div className={container}>
+    <div className={cn(['height100vh', 'scrollY'], 'container scroll')}>
+      <div className={cn(['mrAuto0', 'mlAuto0', 'bp3'], 'container')}>
         <main>{children}</main>
         <footer>bem-vindo dev</footer>
       </div>
