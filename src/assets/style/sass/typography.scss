@@ -1,0 +1,23 @@
+@for $i from 1 through 5 {
+  .fs#{$i} {
+    font-size: var(--fs-#{$i});
+  }
+}
+
+.fs5 {
+  line-height: 1.75rem;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.noUnderline {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .lg_underline {
+    text-decoration: underline !important;
+  }
+}

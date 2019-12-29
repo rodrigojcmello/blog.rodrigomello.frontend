@@ -3,14 +3,7 @@ const _ = require('lodash');
 const path = require('path');
 
 const buildSlug = node => {
-  let slug = `/${_.kebabCase(node.title)}`;
-  if (node.categories) {
-    slug += `/${node.categories
-      .split(',')
-      .map(n => _.trim(n))
-      .join('/')}`;
-  }
-  return slug;
+  return `/${_.kebabCase(node.title.toLowerCase())}`;
 };
 
 function makeRequest(graphql, request) {

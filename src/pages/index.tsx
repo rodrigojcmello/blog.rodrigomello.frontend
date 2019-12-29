@@ -1,5 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react';
 import { graphql, Link } from 'gatsby';
+import { kebabCase } from 'lodash';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Query } from '../../graphql-types';
@@ -10,10 +11,6 @@ import tagIcon from '../assets/icons/simple-small/tag-black.png';
 export interface Props {
   data: Query;
 }
-
-const buildSlug = (title: string): string => {
-  return `/${title.toLowerCase().replace(/ /g, '-')}`;
-};
 
 function IndexPage({ data }: Props): ReactElement {
   return (
@@ -36,24 +33,34 @@ function IndexPage({ data }: Props): ReactElement {
                       'borderSolid',
                       'borderBottom1',
                       'borderContrastColor1',
-                      'pt5',
-                      'pb5'
+                      'pt10',
+                      'pb5',
+                      'pr10',
+                      'pl10',
+                      'lg_pr0',
+                      'lg_pl0'
                     ],
                     'article'
                   )}
                 >
-                  <H2>
+                  <H2 className={['mb2']}>
                     <Link
                       className={cn(
-                        [tagColor(document.node.tags[0].name)],
+                        [
+                          tagColor(document.node.tags[0].name),
+                          'noUnderline',
+                          'lg_underline'
+                        ],
                         'link h2'
                       )}
-                      to={`${buildSlug(document.node.title)}`}
+                      to={`/${kebabCase(
+                        document.node.title.toLocaleLowerCase()
+                      )}`}
                     >
                       {document.node.title}
                     </Link>
                   </H2>
-                  <div className={cn(['flex', 'mb2'], 'flex wrapper')}>
+                  <div className={cn(['flex', 'flexWrap'], 'flex wrapper')}>
                     {(document.node.tags || []).map(
                       (tag): ReactNode => {
                         if (tag?.id && tag.name) {
@@ -78,6 +85,9 @@ function IndexPage({ data }: Props): ReactElement {
                       }
                     )}
                   </div>
+                  <div className={cn(['fs1', 'textRight'], 'article time')}>
+                    atualizado há 2 dias
+                  </div>
                 </li>
               );
             }
@@ -98,6 +108,8 @@ export const pageQuery = graphql`
         node {
           id
           title
+          publishedAt
+          updatedAt
           tags {
             id
             name

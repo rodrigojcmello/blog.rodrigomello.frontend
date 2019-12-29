@@ -1,5 +1,0 @@
-@for $i from 1 through 5 {
-  .fs#{$i} {
-    font-size: var(--fs-#{$i});
-  }
-}

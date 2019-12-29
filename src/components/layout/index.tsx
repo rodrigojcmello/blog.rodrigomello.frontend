@@ -8,9 +8,13 @@ interface Props {
 function Layout({ children }: Props): ReactElement {
   return (
     <div className={cn(['height100vh', 'scrollY'], 'container scroll')}>
-      <div className={cn(['mrAuto0', 'mlAuto0', 'bp3'], 'container')}>
+      <div
+        className={cn(
+          ['mrAuto0', 'mlAuto0', 'bp3', 'lg_pr10', 'lg_pl10'],
+          'container'
+        )}
+      >
         <main>{children}</main>
-        <footer>bem-vindo dev</footer>
       </div>
     </div>
   );

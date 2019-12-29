@@ -18,4 +18,13 @@
   .pl#{$i} {
     padding-left: var(--s-#{$i});
   }
+
+  @media only screen and (min-width: 1024px) {
+    .lg_pr#{$i} {
+      padding-right: var(--s-#{$i}) !important;
+    }
+    .lg_pl#{$i} {
+      padding-left: var(--s-#{$i}) !important;
+    }
+  }
 }
