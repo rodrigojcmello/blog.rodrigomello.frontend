@@ -34,6 +34,6 @@
   }
 
   .colorPrimary#{$i} {
-    background-color: var(--pri-#{$i});
+    color: var(--pri-#{$i});
   }
 }

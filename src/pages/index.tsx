@@ -2,10 +2,10 @@ import React, { ReactElement, ReactNode } from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { bgPrimary1 } from '../assets/style/base.module.scss';
 import { Query } from '../../graphql-types';
-import { cn } from '../utils/style';
+import { cn, tagColor } from '../utils/style';
 import H2 from '../components/Typografy/H2';
+import tagIcon from '../assets/icons/simple-small/tag-black.png';
 
 export interface Props {
   data: Query;
@@ -19,36 +19,65 @@ function IndexPage({ data }: Props): ReactElement {
   return (
     <Layout>
       <SEO title="Blog" />
-      <h1 className={`${bgPrimary1}`}>Articles</h1>
+      <h1 className={cn(['fs4', 'colorContrast8'], 'h1')}>Últimos Artigos:</h1>
       <ul>
         {data.allStrapiArticle.edges.map(
           (document): ReactNode => {
-            if (document.node.title) {
+            if (
+              document.node.title &&
+              document.node.tags &&
+              document.node.tags[0]?.name
+            ) {
               return (
-                <li key={document.node.id}>
+                <li
+                  key={document.node.id}
+                  className={cn(
+                    [
+                      'borderSolid',
+                      'borderBottom1',
+                      'borderContrastColor1',
+                      'pt5',
+                      'pb5'
+                    ],
+                    'article'
+                  )}
+                >
                   <H2>
-                    <Link to={`${buildSlug(document.node.title)}`}>
+                    <Link
+                      className={cn(
+                        [tagColor(document.node.tags[0].name)],
+                        'link h2'
+                      )}
+                      to={`${buildSlug(document.node.title)}`}
+                    >
                       {document.node.title}
                     </Link>
                   </H2>
-                  {(document.node.tags || []).map(
-                    (tag): ReactNode => {
-                      if (tag?.id && tag.name) {
-                        return (
-                          <span
-                            key={tag.id}
-                            className={cn(
-                              ['fs1', 'mr2', 'colorContrast8'],
-                              'tags'
-                            )}
-                          >
-                            {tag.name}
-                          </span>
-                        );
+                  <div className={cn(['flex', 'mb2'], 'flex wrapper')}>
+                    {(document.node.tags || []).map(
+                      (tag): ReactNode => {
+                        if (tag?.id && tag.name) {
+                          return (
+                            <span
+                              key={tag.id}
+                              className={cn(
+                                ['fs1', 'mr3', 'colorContrast8', 'flex'],
+                                'tags'
+                              )}
+                            >
+                              <img
+                                src={tagIcon}
+                                alt="tag"
+                                className={cn(['width16px', 'mr1'], 'icon 16')}
+                              />
+                              <span>{tag.name}</span>
+                            </span>
+                          );
+                        }
+                        return undefined;
                       }
-                      return undefined;
-                    }
-                  )}
+                    )}
+                  </div>
                 </li>
               );
             }
@@ -56,7 +85,6 @@ function IndexPage({ data }: Props): ReactElement {
           }
         )}
       </ul>
-      <Link to="/page-2/">Go to page two</Link>
     </Layout>
   );
 }

@@ -7,7 +7,7 @@ body {
   height: 100%;
   width: 100%;
   line-height: 1.5;
-  color: var(--con-10);
+  color: var(--con-8);
   background-color: var(--con-0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -17,6 +17,7 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
+  border: 0;
 }
 
 ::-moz-focus-inner {
