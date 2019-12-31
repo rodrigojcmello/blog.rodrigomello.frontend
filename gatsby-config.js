@@ -74,6 +74,12 @@ module.exports = {
               : '[local]'
         }
       }
+    },
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        printRejected: true
+      }
     }
   ]
 };
