@@ -1,3 +1,6 @@
+const autoPrefixer = require('autoprefixer');
+const combineMediaQuery = require('postcss-combine-media-query');
+
 module.exports = {
   siteMetadata: {
     title: 'Rodrigo Mello',
@@ -73,6 +76,12 @@ module.exports = {
               ? '[hash:base64:5]'
               : '[local]'
         }
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [autoPrefixer, combineMediaQuery]
       }
     },
     {

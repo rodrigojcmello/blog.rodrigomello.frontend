@@ -6832,6 +6832,14 @@ gatsby-plugin-page-creator@^2.1.37:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
+gatsby-plugin-postcss@^2.1.18:
+  version "2.1.18"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-2.1.18.tgz#bdb6bb54c91ea0d6c4c4ebf98d38e335858654c4"
+  integrity sha512-pQEC8vQ/wYbEoyhC5KOZHghGSO+jYUabTNS9zAbdu+PnAMZM3N5nzMOJ41yk+eFrSeB8ClGNPtKKwzE6AFja7g==
+  dependencies:
+    "@babel/runtime" "^7.7.6"
+    postcss-loader "^3.0.0"
+
 gatsby-plugin-purgecss@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-purgecss/-/gatsby-plugin-purgecss-4.0.1.tgz#e9b85eb6189aa20fff9f0c2e0c8ce748f64624bb"
@@ -12038,6 +12046,13 @@ postcss-colormin@^4.0.3:
     postcss "^7.0.0"
     postcss-value-parser "^3.0.0"
 
+postcss-combine-media-query@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-combine-media-query/-/postcss-combine-media-query-1.0.0.tgz#5723870d5d8fdae76584b68c93e7ac133fad15a8"
+  integrity sha512-Tpu7eigki8soukzOa8bAAXq3HrYLBDhjtq4mgMUQt/r/LTDwdSJtoZNLGT95j0WPVzoz+02G/+Y3YpBG8f/+3A==
+  dependencies:
+    postcss "^7.0.21"
+
 postcss-convert-values@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/postcss-convert-values/-/postcss-convert-values-4.0.1.tgz#ca3813ed4da0f812f9d43703584e449ebe189a7f"
@@ -12098,6 +12113,16 @@ postcss-loader@^2.1.6:
     postcss "^6.0.0"
     postcss-load-config "^2.0.0"
     schema-utils "^0.4.0"
+
+postcss-loader@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-3.0.0.tgz#6b97943e47c72d845fa9e03f273773d4e8dd6c2d"
+  integrity sha512-cLWoDEY5OwHcAjDnkyRQzAXfs2jrKjXpO/HQFcc5b5u/r7aa471wdmChmwfnv7x2u840iat/wi0lQ5nbRgSkUA==
+  dependencies:
+    loader-utils "^1.1.0"
+    postcss "^7.0.0"
+    postcss-load-config "^2.0.0"
+    schema-utils "^1.0.0"
 
 postcss-merge-longhand@^4.0.11:
   version "4.0.11"
@@ -12385,7 +12410,7 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.23, postcss@^7.0.5:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@^7.0.14:
+postcss@^7.0.14, postcss@^7.0.21:
   version "7.0.26"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.26.tgz#5ed615cfcab35ba9bbb82414a4fa88ea10429587"
   integrity sha512-IY4oRjpXWYshuTDFxMVkJDtWIk2LhsTlu8bZnbEJA4+bYT16Lvpo8Qv6EvDumhYRgzjZl489pmsY3qVgJQ08nA==
