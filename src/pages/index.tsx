@@ -7,6 +7,8 @@ import { Query } from '../../graphql-types';
 import { cn, tagColor } from '../utils/style';
 import H2 from '../components/Typografy/H2';
 import tagIcon from '../assets/icons/simple-small/tag-black.png';
+import tagIcon2x from '../assets/icons/simple-small/tag-black@2x.png';
+import tagIcon3x from '../assets/icons/simple-small/tag-black@3x.png';
 
 export interface Props {
   data: Query;
@@ -88,6 +90,7 @@ function IndexPage({ data }: Props): ReactElement {
                                   src={tagIcon}
                                   alt="tag"
                                   className={cn(['icon16', 'mr1'], 'icon 16')}
+                                  srcSet={`${tagIcon}, ${tagIcon2x} 2x, ${tagIcon3x} 3x`}
                                 />
                                 <span>{tag.name}</span>
                               </span>
