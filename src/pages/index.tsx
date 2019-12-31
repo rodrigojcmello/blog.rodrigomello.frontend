@@ -16,7 +16,9 @@ function IndexPage({ data }: Props): ReactElement {
   return (
     <Layout>
       <SEO title="Blog" />
-      <h1 className={cn(['fs4', 'colorContrast8'], 'h1')}>Últimos Artigos:</h1>
+      <h1 className={cn(['fs4', 'colorContrast8', 'pl10', 'mt8'], 'h1')}>
+        Últimos Artigos:
+      </h1>
       <ul>
         {data.allStrapiArticle.edges.map(
           (document): ReactNode => {
@@ -33,60 +35,68 @@ function IndexPage({ data }: Props): ReactElement {
                       'borderSolid',
                       'borderBottom1',
                       'borderContrastColor1',
-                      'pt10',
+                      'lg_pt10',
+                      'pt5',
                       'pb5',
                       'pr10',
-                      'pl10',
+                      'ml10',
                       'lg_pr0',
                       'lg_pl0'
                     ],
                     'article'
                   )}
                 >
-                  <H2 className={['mb2']}>
-                    <Link
-                      className={cn(
-                        [
-                          tagColor(document.node.tags[0].name),
-                          'noUnderline',
-                          'lg_underline'
-                        ],
-                        'link h2'
-                      )}
-                      to={`/${kebabCase(
-                        document.node.title.toLocaleLowerCase()
-                      )}`}
-                    >
-                      {document.node.title}
-                    </Link>
-                  </H2>
-                  <div className={cn(['flex', 'flexWrap'], 'flex wrapper')}>
-                    {(document.node.tags || []).map(
-                      (tag): ReactNode => {
-                        if (tag?.id && tag.name) {
-                          return (
-                            <span
-                              key={tag.id}
-                              className={cn(
-                                ['fs1', 'mr3', 'colorContrast8', 'flex'],
-                                'tags'
-                              )}
-                            >
-                              <img
-                                src={tagIcon}
-                                alt="tag"
-                                className={cn(['width16px', 'mr1'], 'icon 16')}
-                              />
-                              <span>{tag.name}</span>
-                            </span>
-                          );
-                        }
-                        return undefined;
-                      }
+                  <div
+                    className={cn(
+                      ['fs1', 'lg_textRight', 'mb3'],
+                      'article time'
                     )}
-                  </div>
-                  <div className={cn(['fs1', 'textRight'], 'article time')}>
+                  >
                     atualizado há 2 dias
+                  </div>
+                  <div>
+                    <H2 className={['mb2']}>
+                      <Link
+                        className={cn(
+                          [
+                            tagColor(document.node.tags[0].name),
+                            'noUnderline',
+                            'lg_underline'
+                          ],
+                          'link h2'
+                        )}
+                        to={`/${kebabCase(
+                          document.node.title.toLocaleLowerCase()
+                        )}`}
+                      >
+                        {document.node.title}
+                      </Link>
+                    </H2>
+                    <div className={cn(['flex', 'flexWrap'], 'flex wrapper')}>
+                      {(document.node.tags || []).map(
+                        (tag): ReactNode => {
+                          if (tag?.id && tag.name) {
+                            return (
+                              <span
+                                key={tag.id}
+                                className={cn(
+                                  ['fs1', 'mr3', 'colorContrast8', 'flex'],
+                                  'tags'
+                                )}
+                              >
+                                <img
+                                  src={tagIcon}
+                                  alt="tag"
+                                  className={cn(['icon16', 'mr1'], 'icon 16')}
+                                />
+                                <span>{tag.name}</span>
+                              </span>
+                            );
+                          }
+                          return undefined;
+                        }
+                      )}
+                    </div>
                   </div>
                 </li>
               );
