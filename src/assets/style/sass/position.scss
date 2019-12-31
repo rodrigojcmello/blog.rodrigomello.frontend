@@ -6,6 +6,16 @@
   flex-wrap: wrap;
 }
 
+.flexColumn {
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 1024px) {
+  .lg_flexColumnReverse {
+    flex-direction: column-reverse !important;
+  }
+}
+
 .absolute {
   position: absolute;
 }

@@ -26,6 +26,12 @@
     margin-bottom: auto;
   }
 
+  @media only screen and (min-width: 1024px) {
+    .lg_mb#{$i} {
+      margin-bottom: var(--s-#{$i}) !important;
+    }
+  }
+
   // margin-right
 
   .mr#{$i} {

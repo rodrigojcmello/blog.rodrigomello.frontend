@@ -43,14 +43,17 @@ function IndexPage({ data }: Props): ReactElement {
                       'pr10',
                       'ml10',
                       'lg_pr0',
-                      'lg_pl0'
+                      'lg_pl0',
+                      'flex',
+                      'flexColumn',
+                      'lg_flexColumnReverse'
                     ],
                     'article'
                   )}
                 >
                   <div
                     className={cn(
-                      ['fs1', 'lg_textRight', 'mb3'],
+                      ['fs1', 'lg_textRight', 'mb3', 'lg_mb0'],
                       'article time'
                     )}
                   >
