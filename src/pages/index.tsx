@@ -52,7 +52,7 @@ function IndexPage({ data }: Props): ReactElement {
                       'article time'
                     )}
                   >
-                    atualizado há 2 dias
+                    Criado há 2 dias
                   </div>
                   <div>
                     <H2 className={['mb2']}>
