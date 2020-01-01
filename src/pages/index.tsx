@@ -18,7 +18,7 @@ function IndexPage({ data }: Props): ReactElement {
   return (
     <Layout>
       <SEO title="Blog" />
-      <h1 className={cn(['fs4', 'colorContrast8', 'pl10', 'mt8'], 'h1')}>
+      <h1 className={cn(['fs5', 'colorContrast8', 'pl10', 'mt8'], 'h1')}>
         Últimos Artigos:
       </h1>
       <ul>

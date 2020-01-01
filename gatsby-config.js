@@ -33,7 +33,13 @@ module.exports = {
           {
             resolve: 'gatsby-remark-vscode',
             options: {
-              colorTheme: 'Light+ (default light)'
+              colorTheme: 'Dark+ (default dark)'
+              // extensions: [
+              //   {
+              //     identifier: 'xr0master.webstorm-intellij-darcula-theme',
+              //     version: '1.1.1'
+              //   }
+              // ]
             }
           }
         ]
