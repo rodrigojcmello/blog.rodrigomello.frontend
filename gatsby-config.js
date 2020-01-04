@@ -21,7 +21,7 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-transformer-remark',
+    // 'gatsby-transformer-remark',
     'gatsby-remark-images',
     {
       resolve: 'gatsby-plugin-mdx',
@@ -33,13 +33,10 @@ module.exports = {
           {
             resolve: 'gatsby-remark-vscode',
             options: {
-              colorTheme: 'Dark+ (default dark)'
-              // extensions: [
-              //   {
-              //     identifier: 'xr0master.webstorm-intellij-darcula-theme',
-              //     version: '1.1.1'
-              //   }
-              // ]
+              colorTheme: {
+                defaultTheme: 'Solarized Light',
+                prefersDarkTheme: 'Dark+ (default dark)'
+              }
             }
           }
         ]

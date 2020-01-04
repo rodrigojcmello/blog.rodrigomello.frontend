@@ -14,7 +14,6 @@ function makeRequest(graphql, request) {
         if (result.errors) {
           reject(result.errors);
         }
-
         return result;
       })
     );

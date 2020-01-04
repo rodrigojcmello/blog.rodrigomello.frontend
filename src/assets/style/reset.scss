@@ -79,3 +79,43 @@ object {
   display: block;
   vertical-align: middle;
 }
+
+// Code
+
+pre {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.vscode-highlight {
+  border-radius: 0 !important;
+  @media screen and (min-width: 768px) {
+    border-radius: 4px !important;
+  }
+}
+
+.solarized-light {
+  background-color: #fef9ec !important;
+  @media screen and (min-width: 768px) {
+    box-shadow: inset 0 0 0 1px #fdf1d3;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .pd--dark-default-dark {
+    background-color: #0f0f0f !important;
+    @media screen and (min-width: 768px) {
+      box-shadow: inset 0 0 0 1px hsla(0, 0%, 5%, 1);
+    }
+  }
+}
+
+.tmp {
+  padding: 22px;
+  border-left: 2px solid #F44336;
+  font-style: italic;
+  background-color: hsla(0, 0%, 97%, 1);
+  border-radius: 4px;
+  margin-bottom: 24px;
+  color: #F44336;
+}

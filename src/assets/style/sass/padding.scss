@@ -19,6 +19,21 @@
     padding-left: var(--s-#{$i});
   }
 
+  @media only screen and (min-width: 768px) {
+    .md_pt#{$i} {
+      padding-top: var(--s-#{$i});
+    }
+    .md_pr#{$i} {
+      padding-right: var(--s-#{$i}) !important;
+    }
+    .md_pl#{$i} {
+      padding-left: var(--s-#{$i}) !important;
+    }
+    .md_pb#{$i} {
+      padding-bottom: var(--s-#{$i}) !important;
+    }
+  }
+
   @media only screen and (min-width: 1024px) {
     .lg_pt#{$i} {
       padding-top: var(--s-#{$i});
@@ -28,6 +43,9 @@
     }
     .lg_pl#{$i} {
       padding-left: var(--s-#{$i}) !important;
+    }
+    .lg_pb#{$i} {
+      padding-bottom: var(--s-#{$i}) !important;
     }
   }
 }
