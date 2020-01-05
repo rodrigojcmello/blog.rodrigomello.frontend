@@ -86,12 +86,12 @@ module.exports = {
       options: {
         postCssPlugins: [autoPrefixer, combineMediaQuery]
       }
-    },
-    {
-      resolve: 'gatsby-plugin-purgecss',
-      options: {
-        printRejected: true
-      }
     }
+    // {
+    //   resolve: 'gatsby-plugin-purgecss',
+    //   options: {
+    //     printRejected: true
+    //   }
+    // }
   ]
 };

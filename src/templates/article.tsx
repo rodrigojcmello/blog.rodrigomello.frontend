@@ -7,13 +7,13 @@ import { Query } from '../../graphql-types';
 import H2 from '../components/Typografy/H2';
 import H1 from '../components/Typografy/H1';
 import P from '../components/Typografy/P';
+import Blockquote from '../components/Typografy/Blockquote';
 
 interface Props {
   data: Query;
 }
 
 function ArticleTemplate({ data }: Props): JSX.Element {
-  console.log(data);
   return (
     <Layout>
       <H1>{data.strapiArticle?.title}</H1>
@@ -29,7 +29,8 @@ function ArticleTemplate({ data }: Props): JSX.Element {
           <MDXProvider
             components={{
               h2: H2,
-              p: P
+              p: P,
+              blockquote: Blockquote
             }}
           >
             {data.mdx?.body && <MDXRenderer>{data.mdx.body}</MDXRenderer>}

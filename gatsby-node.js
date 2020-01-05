@@ -41,7 +41,6 @@ exports.createPages = ({ actions, graphql }) => {
     result.data.allStrapiArticle.edges.forEach(({ node }) => {
       createPage({
         path: buildSlug(node),
-        // path: `/${node.id}`,
         component: path.resolve('src/templates/article.tsx'),
         context: {
           id: node.id

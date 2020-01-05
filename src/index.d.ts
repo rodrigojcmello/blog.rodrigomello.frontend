@@ -1,5 +1,3 @@
-// import '@testing-library/jest-dom/extend-expect';
-
 declare module '*.jpeg' {
   const value: string;
   export = value;
@@ -11,13 +9,41 @@ declare module '*.png' {
 }
 
 declare module '@mdx-js/react' {
-  import React, { ComponentType, ReactElement } from 'react';
+  import { ComponentType, ReactNode } from 'react';
+
+  type MarkdownTagsPeteca =
+    | 'p'
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'thematicBreak'
+    | 'blockquote'
+    | 'ul'
+    | 'ol'
+    | 'li'
+    | 'table'
+    | 'tr'
+    | 'td'
+    | 'pre'
+    | 'code'
+    | 'em'
+    | 'strong'
+    | 'delete'
+    | 'inlineCode'
+    | 'hr'
+    | 'a'
+    | 'img';
 
   type MDXProps = {
     children: ReactNode;
-    components: { wrapper: ComponentType };
+    components: Partial<
+      Record<MarkdownTagsPeteca, ComponentType<{ children: ReactNode }>>
+    >;
   };
-  const MDXProvider: (props: MDXProps) => ReactElement;
+  const MDXProvider: ComponentType<MDXProps>;
   // eslint-disable-next-line import/prefer-default-export
   export { MDXProvider };
 }

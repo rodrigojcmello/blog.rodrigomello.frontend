@@ -96,6 +96,7 @@ export const fs4: string;
 export const fs5: string;
 export const textRight: string;
 export const noUnderline: string;
+export const italic: string;
 export const lg_textRight: string;
 export const lgTextRight: string;
 export const lg_underline: string;
