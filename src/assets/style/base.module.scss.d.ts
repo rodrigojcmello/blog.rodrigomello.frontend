@@ -1,7 +1,3 @@
-export const vscodeHighlight: string;
-export const solarizedLight: string;
-export const pdDarkDefaultDark: string;
-export const tmp: string;
 export const bgContrast0: string;
 export const colorContrast0: string;
 export const borderContrast0: string;

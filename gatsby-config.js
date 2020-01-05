@@ -27,7 +27,7 @@ module.exports = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: {
-          default: require.resolve('./src/templates/article.tsx')
+          default: require.resolve('./src/templates/article/index.tsx')
         },
         gatsbyRemarkPlugins: [
           {
@@ -35,7 +35,8 @@ module.exports = {
             options: {
               colorTheme: {
                 defaultTheme: 'Solarized Light',
-                prefersDarkTheme: 'Dark+ (default dark)'
+                // prefersDarkTheme: 'Dark+ (default dark)'
+                prefersDarkTheme: 'Solarized Dark'
               }
             }
           }
@@ -86,12 +87,12 @@ module.exports = {
       options: {
         postCssPlugins: [autoPrefixer, combineMediaQuery]
       }
+    },
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        printRejected: true
+      }
     }
-    // {
-    //   resolve: 'gatsby-plugin-purgecss',
-    //   options: {
-    //     printRejected: true
-    //   }
-    // }
   ]
 };

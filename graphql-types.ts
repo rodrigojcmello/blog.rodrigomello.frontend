@@ -2695,6 +2695,7 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___theme_color' |
   'pluginCreator___pluginOptions___display' |
   'pluginCreator___pluginOptions___icon' |
+  'pluginCreator___pluginOptions___printRejected' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___pluginOptions___cssLoaderOptions___importLoaders' |
   'pluginCreator___pluginOptions___cssLoaderOptions___localIdentName' |
@@ -2900,6 +2901,7 @@ export type SitePluginFieldsEnum =
   'pluginOptions___theme_color' |
   'pluginOptions___display' |
   'pluginOptions___icon' |
+  'pluginOptions___printRejected' |
   'pluginOptions___pathCheck' |
   'pluginOptions___cssLoaderOptions___importLoaders' |
   'pluginOptions___cssLoaderOptions___localIdentName' |
@@ -3031,6 +3033,7 @@ export type SitePluginPluginOptions = {
   theme_color?: Maybe<Scalars['String']>,
   display?: Maybe<Scalars['String']>,
   icon?: Maybe<Scalars['String']>,
+  printRejected?: Maybe<Scalars['Boolean']>,
   pathCheck?: Maybe<Scalars['Boolean']>,
   cssLoaderOptions?: Maybe<SitePluginPluginOptionsCssLoaderOptions>,
 };
@@ -3070,6 +3073,7 @@ export type SitePluginPluginOptionsFilterInput = {
   theme_color?: Maybe<StringQueryOperatorInput>,
   display?: Maybe<StringQueryOperatorInput>,
   icon?: Maybe<StringQueryOperatorInput>,
+  printRejected?: Maybe<BooleanQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
   cssLoaderOptions?: Maybe<SitePluginPluginOptionsCssLoaderOptionsFilterInput>,
 };
