@@ -33,11 +33,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-vscode',
             options: {
-              colorTheme: {
-                defaultTheme: 'Solarized Light',
-                // prefersDarkTheme: 'Dark+ (default dark)'
-                prefersDarkTheme: 'Solarized Dark'
-              }
+              colorTheme: 'Monokai'
             }
           }
         ]
@@ -91,7 +87,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-purgecss',
       options: {
-        printRejected: true
+        printRejected: true,
+        develop: true,
+        ignore: ['src/templates/article/style.scss']
       }
     }
   ]

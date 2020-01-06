@@ -8,7 +8,7 @@ body {
   width: 100%;
   line-height: 1.5;
   color: var(--con-8);
-  background-color: var(--con-0);
+  background-color: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -85,6 +85,10 @@ object {
 pre {
   margin-top: 12px;
   margin-bottom: 12px;
+}
+
+strong {
+  color: #ae1409;
 }
 
 blockquote p {

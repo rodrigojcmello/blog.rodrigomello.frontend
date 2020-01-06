@@ -2270,6 +2270,8 @@ export type QuerySiteArgs = {
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
+  port?: Maybe<IntQueryOperatorInput>,
+  host?: Maybe<StringQueryOperatorInput>,
   polyfill?: Maybe<BooleanQueryOperatorInput>,
   pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>
@@ -2339,6 +2341,8 @@ export type Site = Node & {
   children: Array<Node>,
   internal: Internal,
   siteMetadata?: Maybe<SiteSiteMetadata>,
+  port?: Maybe<Scalars['Int']>,
+  host?: Maybe<Scalars['String']>,
   polyfill?: Maybe<Scalars['Boolean']>,
   pathPrefix?: Maybe<Scalars['String']>,
   buildTime?: Maybe<Scalars['Date']>,
@@ -2469,6 +2473,8 @@ export type SiteFieldsEnum =
   'siteMetadata___title' |
   'siteMetadata___description' |
   'siteMetadata___author' |
+  'port' |
+  'host' |
   'polyfill' |
   'pathPrefix' |
   'buildTime';
@@ -2479,6 +2485,8 @@ export type SiteFilterInput = {
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
+  port?: Maybe<IntQueryOperatorInput>,
+  host?: Maybe<StringQueryOperatorInput>,
   polyfill?: Maybe<BooleanQueryOperatorInput>,
   pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>,
@@ -2695,10 +2703,12 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___theme_color' |
   'pluginCreator___pluginOptions___display' |
   'pluginCreator___pluginOptions___icon' |
-  'pluginCreator___pluginOptions___printRejected' |
-  'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___pluginOptions___cssLoaderOptions___importLoaders' |
   'pluginCreator___pluginOptions___cssLoaderOptions___localIdentName' |
+  'pluginCreator___pluginOptions___printRejected' |
+  'pluginCreator___pluginOptions___develop' |
+  'pluginCreator___pluginOptions___ignore' |
+  'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
   'pluginCreator___ssrAPIs' |
@@ -2890,6 +2900,7 @@ export type SitePluginFieldsEnum =
   'pluginOptions___defaultLayouts___default' |
   'pluginOptions___gatsbyRemarkPlugins' |
   'pluginOptions___gatsbyRemarkPlugins___resolve' |
+  'pluginOptions___gatsbyRemarkPlugins___options___colorTheme' |
   'pluginOptions___name' |
   'pluginOptions___path' |
   'pluginOptions___fileName' |
@@ -2901,10 +2912,12 @@ export type SitePluginFieldsEnum =
   'pluginOptions___theme_color' |
   'pluginOptions___display' |
   'pluginOptions___icon' |
-  'pluginOptions___printRejected' |
-  'pluginOptions___pathCheck' |
   'pluginOptions___cssLoaderOptions___importLoaders' |
   'pluginOptions___cssLoaderOptions___localIdentName' |
+  'pluginOptions___printRejected' |
+  'pluginOptions___develop' |
+  'pluginOptions___ignore' |
+  'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
   'ssrAPIs' |
@@ -3033,9 +3046,11 @@ export type SitePluginPluginOptions = {
   theme_color?: Maybe<Scalars['String']>,
   display?: Maybe<Scalars['String']>,
   icon?: Maybe<Scalars['String']>,
-  printRejected?: Maybe<Scalars['Boolean']>,
-  pathCheck?: Maybe<Scalars['Boolean']>,
   cssLoaderOptions?: Maybe<SitePluginPluginOptionsCssLoaderOptions>,
+  printRejected?: Maybe<Scalars['Boolean']>,
+  develop?: Maybe<Scalars['Boolean']>,
+  ignore?: Maybe<Array<Maybe<Scalars['String']>>>,
+  pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
 export type SitePluginPluginOptionsCssLoaderOptions = {
@@ -3073,9 +3088,11 @@ export type SitePluginPluginOptionsFilterInput = {
   theme_color?: Maybe<StringQueryOperatorInput>,
   display?: Maybe<StringQueryOperatorInput>,
   icon?: Maybe<StringQueryOperatorInput>,
-  printRejected?: Maybe<BooleanQueryOperatorInput>,
-  pathCheck?: Maybe<BooleanQueryOperatorInput>,
   cssLoaderOptions?: Maybe<SitePluginPluginOptionsCssLoaderOptionsFilterInput>,
+  printRejected?: Maybe<BooleanQueryOperatorInput>,
+  develop?: Maybe<BooleanQueryOperatorInput>,
+  ignore?: Maybe<StringQueryOperatorInput>,
+  pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export type SitePluginPluginOptionsGatsbyRemarkPlugins = {
@@ -3093,21 +3110,11 @@ export type SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput = {
 };
 
 export type SitePluginPluginOptionsGatsbyRemarkPluginsOptions = {
-  colorTheme?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptionsColorTheme>,
-};
-
-export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsColorTheme = {
-  defaultTheme?: Maybe<Scalars['String']>,
-  prefersDarkTheme?: Maybe<Scalars['String']>,
-};
-
-export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsColorThemeFilterInput = {
-  defaultTheme?: Maybe<StringQueryOperatorInput>,
-  prefersDarkTheme?: Maybe<StringQueryOperatorInput>,
+  colorTheme?: Maybe<Scalars['String']>,
 };
 
 export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsFilterInput = {
-  colorTheme?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptionsColorThemeFilterInput>,
+  colorTheme?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePluginSortInput = {

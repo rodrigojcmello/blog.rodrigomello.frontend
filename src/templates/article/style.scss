@@ -5,20 +5,19 @@
   }
 }
 
-// #0e3e3a
-
-.solarized-light {
-  background-color: #fef9ec !important;
-  @media screen and (min-width: 768px) {
-    box-shadow: inset 0 0 0 1px #fdf1d3;
-  }
+.monokai {
+  background-color: #0d0d0d !important;
 }
 
-//@media (prefers-color-scheme: dark) {
-//  .pd--dark-default-dark {
-//    background-color: hsla(207, 40%, 15%, 1) !important;
-//    @media screen and (min-width: 768px) {
-//      box-shadow: inset 0 0 0 1px hsla(0, 0%, 5%, 1);
-//    }
-//  }
-//}
+.monokai .mtk3 {
+  color: #00d600 !important;
+}
+
+.vscode-highlight-line {
+  color: #00d600;
+}
+
+strong {
+  color: var(--strong);
+}
+
