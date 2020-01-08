@@ -7,6 +7,8 @@
 
 .monokai {
   background-color: #0d0d0d !important;
+  margin-top: 24px !important;
+  margin-bottom: 24px !important;
 }
 
 .monokai .mtk3 {
@@ -19,5 +21,9 @@
 
 strong {
   color: var(--strong);
+}
+
+blockquote p {
+  padding: 0 !important;
 }
 

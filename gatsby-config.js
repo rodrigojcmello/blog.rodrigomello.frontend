@@ -85,6 +85,12 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-disqus',
+      options: {
+        shortname: 'rodrigomello'
+      }
+    },
+    {
       resolve: 'gatsby-plugin-purgecss',
       options: {
         printRejected: true,

@@ -2705,6 +2705,7 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___icon' |
   'pluginCreator___pluginOptions___cssLoaderOptions___importLoaders' |
   'pluginCreator___pluginOptions___cssLoaderOptions___localIdentName' |
+  'pluginCreator___pluginOptions___shortname' |
   'pluginCreator___pluginOptions___printRejected' |
   'pluginCreator___pluginOptions___develop' |
   'pluginCreator___pluginOptions___ignore' |
@@ -2914,6 +2915,7 @@ export type SitePluginFieldsEnum =
   'pluginOptions___icon' |
   'pluginOptions___cssLoaderOptions___importLoaders' |
   'pluginOptions___cssLoaderOptions___localIdentName' |
+  'pluginOptions___shortname' |
   'pluginOptions___printRejected' |
   'pluginOptions___develop' |
   'pluginOptions___ignore' |
@@ -3047,6 +3049,7 @@ export type SitePluginPluginOptions = {
   display?: Maybe<Scalars['String']>,
   icon?: Maybe<Scalars['String']>,
   cssLoaderOptions?: Maybe<SitePluginPluginOptionsCssLoaderOptions>,
+  shortname?: Maybe<Scalars['String']>,
   printRejected?: Maybe<Scalars['Boolean']>,
   develop?: Maybe<Scalars['Boolean']>,
   ignore?: Maybe<Array<Maybe<Scalars['String']>>>,
@@ -3089,6 +3092,7 @@ export type SitePluginPluginOptionsFilterInput = {
   display?: Maybe<StringQueryOperatorInput>,
   icon?: Maybe<StringQueryOperatorInput>,
   cssLoaderOptions?: Maybe<SitePluginPluginOptionsCssLoaderOptionsFilterInput>,
+  shortname?: Maybe<StringQueryOperatorInput>,
   printRejected?: Maybe<BooleanQueryOperatorInput>,
   develop?: Maybe<BooleanQueryOperatorInput>,
   ignore?: Maybe<StringQueryOperatorInput>,

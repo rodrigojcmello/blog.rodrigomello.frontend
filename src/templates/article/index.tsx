@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
 import Layout from '../../components/layout';
 import { Query } from '../../../graphql-types';
 import H2 from '../../components/Typografy/H2';
@@ -16,6 +17,12 @@ interface Props {
 }
 
 function ArticleTemplate({ data }: Props): JSX.Element {
+  const disqusConfig = {
+    url: 'https://rodrigomello.blog/teste',
+    identifier: data.strapiArticle?.id,
+    title: data.strapiArticle?.title
+  };
+
   return (
     <Layout>
       {data.strapiArticle?.title && <SEO title={data.strapiArticle.title} />}
@@ -29,6 +36,7 @@ function ArticleTemplate({ data }: Props): JSX.Element {
       >
         {data.mdx?.body && <MDXRenderer>{data.mdx.body}</MDXRenderer>}
       </MDXProvider>
+      <Disqus config={disqusConfig} />
     </Layout>
   );
 }
