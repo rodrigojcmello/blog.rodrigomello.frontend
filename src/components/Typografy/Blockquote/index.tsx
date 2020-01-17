@@ -9,10 +9,8 @@ function Blockquote({ children, className }: Props): ReactElement {
         [
           'pr10',
           'pl10',
-          'pt10',
-          'pb10',
-          'md_pr0',
-          'md_pl0',
+          'pt1',
+          'pb1',
           'mb10',
           'italic',
           'bgContrast1',

@@ -19,11 +19,27 @@
   color: #00d600;
 }
 
+//strong {
+//  color: var(--strong);
+//  font-weight: 400;
+//}
+
 strong {
-  color: var(--strong);
+  color: #a21041;
+  font-weight: 400;
+  background-color: #fef1f5;
+  padding: 1px 6px 3px;
+  border-radius: 4px;
+  box-decoration-break: clone;
 }
 
 blockquote p {
   padding: 0 !important;
 }
 
+pre {
+  + h2,
+  + h3 {
+    margin-top: 48px !important;
+  }
+}

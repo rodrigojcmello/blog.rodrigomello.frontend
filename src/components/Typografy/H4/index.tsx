@@ -1,27 +1,28 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Props } from './types';
 import { cn } from '../../../utils/style';
 
-function H1({ children, className }: Props): JSX.Element {
+function H4({ children, className }: Props): ReactElement {
   return (
-    <h1
+    <h4
       className={cn(
         [
-          'fs7',
+          'fs4',
+          'bold',
+          'mt9',
+          'mb5',
           'pl10',
           'pr10',
-          'md_mt1',
-          'mb5',
           'md_pl0',
           'md_pr0',
           ...(className || [])
         ],
-        'h1'
+        'h4'
       )}
     >
       {children}
-    </h1>
+    </h4>
   );
 }
 
-export default H1;
+export default H4;

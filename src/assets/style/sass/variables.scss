@@ -3,9 +3,11 @@
 
   --fs-1: 0.75rem; // 12px
   --fs-2: 0.875rem; // 14px
-  --fs-3: 1rem; // 16px
-  --fs-4: 1.125rem; // 18px
-  --fs-5: 1.5rem; // 24px
+  --fs-3: 1rem; // 16px p
+  --fs-4: 1.125rem; // 18px H4
+  --fs-5: 1.5rem; // 24px H3
+  --fs-6: 1.75rem; // 28px H2
+  --fs-7: 2rem; // 32px H1
 
   // Spacing
 
@@ -20,6 +22,7 @@
   --s-8: 16px;
   --s-9: 20px;
   --s-10: 24px;
+  --s-11: 32px;
 
   // Breakpoint
 
@@ -50,6 +53,8 @@
   --sec-7: hsl(207, 73%, 30%);
   --sec-8: hsl(207, 73%, 20%);
   --sec-9: hsl(207, 73%, 10%);
+
+  --font-con-0: hsla(200, 18%, 34%, 1);
 
   --con-0: hsl(0, 0%, 100%);
   --con-1: hsl(0, 0%, 95%);
@@ -176,7 +181,7 @@
     --strong: #d8aa64;
 
     // Background
-    --background: #002B36;
+    --background: #002b36;
 
     // React Color
     --react-color: hsla(193, 72%, 40%, 1);

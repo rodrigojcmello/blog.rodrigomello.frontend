@@ -1,4 +1,4 @@
-@for $i from 0 through 10 {
+@for $i from 0 through 11 {
   // margin
 
   .m#{$i} {
@@ -24,6 +24,15 @@
   }
   .mbAuto#{$i} {
     margin-bottom: auto;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .md_mt#{$i} {
+      margin-top: var(--s-#{$i}) !important;
+    }
+    .md_mb#{$i} {
+      margin-bottom: var(--s-#{$i}) !important;
+    }
   }
 
   @media only screen and (min-width: 1024px) {

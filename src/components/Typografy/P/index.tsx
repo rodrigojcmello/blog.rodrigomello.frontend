@@ -6,7 +6,7 @@ function P({ children, className }: Props): ReactElement {
   return (
     <p
       className={cn(
-        ['pr10', 'pl10', 'md_pr0', 'md_pl0', ...(className || [])],
+        ['p', 'pr10', 'pl10', 'md_pr0', 'md_pl0', ...(className || [])],
         'p'
       )}
     >
